@@ -1,9 +1,9 @@
 <template>
     <div class="flex flex-col items-center justify-center h-screen text-slate-50 text-9xl">
-        <div>
-        Raymond Lewis
+        <div class="font-mono ml-5">
+          RAYMOND LEWIS
         </div>
-        <div class="text-xl items-end justify-end" id="ClickInfo">
+        <div class="font-mono text-xl items-end justify-end" id="ClickInfo">
             Click Anywhere
         </div>
     </div>
@@ -22,6 +22,10 @@
     --pink: rgb(244,143,177)
   }
   
+#ClickInfo{
+    -webkit-text-fill-color: rgb(184, 4, 4);
+}
+</style>
 @keyframes background-pan {
     from {
       background-position: 0% center;
@@ -30,10 +34,6 @@
       background-position: -200% center;
     }
   }
-#ClickInfo{
-    -webkit-text-fill-color: rgb(184, 4, 4);
-}
-</style>
     <!-- animation: background-pan 3s linear infinite;
     background: linear-gradient(
       to right,
