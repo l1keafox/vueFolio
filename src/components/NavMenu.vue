@@ -1,5 +1,5 @@
 <template>
-  <div id="NavMenu" class="absolute left-1 top-1 text-slate-900 font-josefin">
+  <div id="NavMenu" class=" text-slate-900 font-josefin">
 
     <TransitionRoot
       :show="showMenu"
@@ -10,14 +10,29 @@
       leave-from="translate-x-0"
       leave-to="-translate-x-full"    
     >
-      <ol class="">
+      <ol id="menuOne" class="absolute left-1 top-1">
         <li @click="$emit('navClick','AboutMe')">About Me</li>
-        <li @click="$emit('navClick','MyPortfolio')">Portfolio</li>
-        <li @click="$emit('navClick','MyResume')">Resume</li>
         <li @click="$emit('navClick','ContactMe')">Contact Me</li>
       </ol>
     </TransitionRoot>
-  </div>
+
+    <TransitionRoot
+      :show="showMenu"
+      enter="transition ease-in-out duration-1500 transform"
+      enter-from="-translate-x-full"
+      enter-to="translate-x-0"
+      leave="transition ease-in-out duration-1500 transform"
+      leave-from="translate-x-0"
+      leave-to="-translate-x-full"    
+    >
+
+    <ol id="menuTwo" class="absolute right-1 top-1">
+        <li @click="$emit('navClick','MyPortfolio')">Portfolio</li>
+        <li @click="$emit('navClick','MyResume')">Resume</li>
+       </ol>
+    </TransitionRoot>
+
+</div>
 </template>
 
 <script>
@@ -60,9 +75,10 @@ button {
   padding: 5px;
   width: 200px;
   border: 1px solid blue;
-  background-color: antiquewhite;
+  background-color: rgb(104, 224, 24);
   text-align: right;
   cursor: pointer;
 }
+
 
 </style>
