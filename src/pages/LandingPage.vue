@@ -24,16 +24,25 @@
 </script>
 
 <style scoped>
-:root {
-    --purple: rgb(123,31,162);
-    --violet: rgb(103,58,183);
-    --pink: rgb(244,143,177)
-  }
-  
+
+@keyframes redGlow {
+  0% { color: red; }
+  50% { color: rgb(39, 10, 10); }
+  100% { color: red; }}
+
+
 #ClickInfo{
-    -webkit-text-fill-color: rgb(184, 4, 4);
+  animation: redGlow 3s infinite;
 }
+
+
 </style>
+-webkit-text-fill-color: rgb(184, 4, 4);
+:root {
+  --purple: rgb(123,31,162);
+  --violet: rgb(103,58,183);
+  --pink: rgb(244,143,177)
+}
 @keyframes background-pan {
     from {
       background-position: 0% center;
