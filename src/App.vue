@@ -26,12 +26,23 @@ import LandingPage from "./pages/LandingPage";
 import HomePage from "./pages/HomePage";
 import { TransitionRoot } from "@headlessui/vue";
 import NavMenu from "./components/NavMenu" 
+
+import AboutMe from "./pages/AboutMe";
+import ContactMe from "./pages/ContactMe";
+import MyResume from "./pages/MyResume";
+import MyPortfolio from "./pages/MyPortfolio";
+
+
 export default {
   name: "App",
   components: {
     HomePage,
     LandingPage,
     TransitionRoot,
+    MyResume,
+    MyPortfolio,
+    AboutMe,
+    ContactMe,
     NavMenu
   },
   data() {
@@ -44,6 +55,7 @@ export default {
   methods:{
     navStage(newstage){
       console.log('changing stage into:',newstage);
+      this.currentStage = newstage;
     }
   },  
   mounted() {

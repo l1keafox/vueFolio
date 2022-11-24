@@ -69,16 +69,26 @@ export default {
 </script>
 
 <style scoped>
-li,
-button {
+#menuOne li {
   margin: 5px;
   padding: 5px;
+  margin-top:15px;
   width: 200px;
   border: 1px solid blue;
-  background-color: rgb(104, 224, 24);
+  background-color: rgb(224, 24, 181);
   text-align: right;
   cursor: pointer;
 }
-
+#menuTwo li {
+    margin: 5px;
+    padding: 5px;
+    margin-top:15px;
+    width: 200px;
+    border: 1px solid blue;
+    background-color: rgb(177, 14, 14);
+    text-align: left;
+    cursor: pointer;
+  }
+  
 
 </style>
