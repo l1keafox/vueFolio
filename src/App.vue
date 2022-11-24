@@ -1,13 +1,11 @@
 <template>
   <div id="tiles" class=""></div>
   <div id="content" class="text-3xl absolute" v-if="introDone">
-    <HomePage />
+    <NavMenu @navClick="navStage"/>
+    <component :is="this.currentStage" />
+
   </div>
-  <div
-    id="welcome"
-    class="text-3xl absolute pointer-events-none"
-    v-if="introDone === false"
-  >
+  <div id="welcome" class="text-3xl absolute pointer-events-none" v-if="introDone === false">
     <TransitionRoot
       :show="isShowing"
       enter="transition-opacity duration-[1000ms]"
@@ -27,31 +25,38 @@ import anime from "animejs/lib/anime.es.js";
 import LandingPage from "./pages/LandingPage";
 import HomePage from "./pages/HomePage";
 import { TransitionRoot } from "@headlessui/vue";
-
+import NavMenu from "./components/NavMenu" 
 export default {
   name: "App",
   components: {
     HomePage,
     LandingPage,
     TransitionRoot,
+    NavMenu
   },
   data() {
     return {
       introDone: false,
       isShowing: false,
+      currentStage:''
     };
   },
+  methods:{
+    navStage(newstage){
+      console.log('changing stage into:',newstage);
+    }
+  },  
   mounted() {
     let toggle = false;
     this.isShowing = true;
     let wrapper = document.getElementById("tiles");
     let columns = Math.floor(document.body.clientWidth / 50);
     let rows = Math.floor(document.body.clientWidth / 50);
-
+    this.currentStage = "LandingPage";
     const handleOnClick = (index) => {
       this.isShowing = false;
       toggle = !toggle;
-
+      this.currentStage = "HomePage";
       let tiles = document.getElementsByClassName("tile");
       console.log("Remove grid and ready folio");
       for (let tile of tiles) {

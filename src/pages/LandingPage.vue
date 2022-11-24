@@ -28,7 +28,8 @@
 @keyframes redGlow {
   0% { color: red; }
   50% { color: rgb(39, 10, 10); }
-  100% { color: red; }}
+  100% { color: red; }
+}
 
 
 #ClickInfo{
