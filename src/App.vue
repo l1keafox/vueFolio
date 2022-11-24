@@ -1,10 +1,10 @@
 <template>
   <div id="tiles" class =""></div>
   <div id="content" class="text-3xl absolute" v-show="introDone"> 
-    <LandingPage/>
+    <HomePage/>
   </div>
   <div id="welcome" class="text-3xl absolute pointer-events-none" v-show="!introDone"> 
-    <HomePage/>
+    <LandingPage/>
   </div>
 </template>
 
@@ -135,6 +135,7 @@ body {
 }
 .tile:hover{
   opacity: 0.95;
+  cursor: pointer;
 }
 .tile:before {
   background-color : rgb(20,20,20);
