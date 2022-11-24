@@ -1,15 +1,23 @@
 <template>
   <div id="tiles" class =""></div>
-  <div id="content" class="text-3xl absolute" v-show="introDone"> TEST </div>
-  <div id="welcome" class="text-3xl absolute pointer-events-none" v-show="!introDone"> HELLO! </div>
+  <div id="content" class="text-3xl absolute" v-show="introDone"> 
+    <LandingPage/>
+  </div>
+  <div id="welcome" class="text-3xl absolute pointer-events-none" v-show="!introDone"> 
+    <HomePage/>
+  </div>
 </template>
 
 <script>
 import anime from 'animejs/lib/anime.es.js';
+import LandingPage from "./pages/LandingPage"
+import HomePage from "./pages/HomePage"
+
 export default {
   name: "App",
   components: {
-
+    HomePage,
+    LandingPage
   },
   data() {
     return {
@@ -95,13 +103,13 @@ export default {
 }
 #content{
   display:fixed;
-  left:0;
-  top:0;
+  left:0%;
+  top:0%;
 }
 #welcome{
   display:fixed;
-  left:50%;
-  top:50%;
+  left:0%;
+  top:0%;
 }
 
 body {
