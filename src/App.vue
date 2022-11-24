@@ -1,12 +1,12 @@
 <template>
   <div id="tiles" class=""></div>
-  <div id="content" class="text-3xl absolute" v-show="introDone">
+  <div id="content" class="text-3xl absolute" v-if="introDone">
     <HomePage />
   </div>
   <div
     id="welcome"
     class="text-3xl absolute pointer-events-none"
-    v-show="!introDone"
+    v-if="introDone === false"
   >
     <TransitionRoot
       :show="isShowing"

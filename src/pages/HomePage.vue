@@ -1,6 +1,8 @@
 <template>
-    <div class="flex flex-col  h-screen py-8 gap-x-2 gap-y-1 text-center items-center justify-center font-mono">
-        <div class="w-4/5 mx-auto">
+    <div class="flex flex-col  h-screen py-8 gap-x-2 gap-y-1 text-center items-center justify-center font-mono text-slate-300">
+
+      <Transition name="fade">
+        <div v-if="showHome" class="w-4/5 mx-auto">
             <div class="flex justify-center items-center space-x-16 text-5xl font-ubuntu dark:text-slate-400">
               <p>
                 I am a<span class="text-green-400"> full stack </span>software
@@ -10,9 +12,11 @@
                 relationships.
               </p>
             </div>
-            <p className="text-5xl block relative text-center font-ubuntu">
+            <br/>
+            <p className="text-5xl block relative text-center font-ubuntu  dark:text-slate-400">
                 my skillset
               </p>
+              <br/>
             <div class="flex items-center justify-center">
             <img height="32" width="32" src="https://unpkg.com/simple-icons@v7/icons/html5.svg" />   
             <img height="32" width="32" src="https://unpkg.com/simple-icons@v7/icons/react.svg" />   
@@ -28,26 +32,44 @@
             <img height="32" width="32" src="https://unpkg.com/simple-icons@v7/icons/nodedotjs.svg" />   
             <img height="32" width="32" src="https://unpkg.com/simple-icons@v7/icons/npm.svg" />   
             <img height="32" width="32" src="https://unpkg.com/simple-icons@v7/icons/vuedotjs.svg" />   
-        </div>
-          </div>
-    </div>
+            </div>
+          </div> 
+        </Transition>
+
+      </div>
 </template>
 
 <script>
-
+import { Transition } from "vue";
     export default {
         name:"HomePage",
         components:{
-            
+          Transition
         },
-        setup(){
+        data(){
             return{
-
+              showHome:false
             }
+        },
+        methods:{
+        },
+        mounted(){
+           this.showHome = true;
+        },
+        updated(){
+          console.log('udated');
         }
     }
 </script>
 
 <style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1.5s ease;
+}
 
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 </style>
