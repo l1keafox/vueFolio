@@ -11,7 +11,15 @@
 
 <script>
     export default {
-        name:"LandingPage"
+        name:"LandingPage",
+        components:{
+          
+        },
+        data(){
+          return{
+          }
+        },
+        mounted(){}
     }
 </script>
 

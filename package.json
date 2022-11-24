@@ -13,6 +13,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "@fortawesome/vue-fontawesome": "^3.0.2",
+    "@headlessui/vue": "^1.7.4",
     "@heroicons/vue": "^2.0.13",
     "animejs": "^3.2.1",
     "autoprefixer": "^10",

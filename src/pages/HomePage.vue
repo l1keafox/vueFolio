@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col  py-8 gap-x-2 gap-y-1 text-center items-center justify-center font-mono">
+    <div class="flex flex-col  h-screen py-8 gap-x-2 gap-y-1 text-center items-center justify-center font-mono">
         <div class="w-4/5 mx-auto">
             <div class="flex justify-center items-center space-x-16 text-5xl font-ubuntu dark:text-slate-400">
               <p>
