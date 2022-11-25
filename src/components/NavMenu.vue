@@ -16,10 +16,10 @@
 
     <!-- <ol id="menuOne" class="absolute -left-48 top-1">
         <ol id="menuTwo" class="absolute -right-40 top-1"> -->
-        <button @click="$emit('navClick','AboutMe')" class="flex  justify-end  bg-yellow-300 absolute -left-48 top-1 hover:-left-1"> About Me <AccountQuestion class="ml-5"/> </button>
-        <button @click="$emit('navClick','ContactMe')" class="flex  justify-end  bg-yellow-300 absolute -left-48 top-20 hover:-left-1">Contact Me <CardAccountPhoneOutline class="ml-5"/></button>
-        <button @click="$emit('navClick','MyPortfolio')" class="flex justify-end bg-yellow-300 absolute -left-48 top-40 hover:-left-1"> Portfolio <Briefcase class="ml-5"/></button>
-        <button @click="$emit('navClick','MyResume')" class="flex justify-end  bg-yellow-300 absolute -left-48 top-60 hover:-left-1"> Resume <FileDocument class="ml-5"/></button>
+        <button @click="$emit('navClick','AboutMe')" :class="buttonOneClass"> About Me <AccountQuestion class="ml-5"/> </button>
+        <button @click="$emit('navClick','ContactMe')" :class="buttonTwoClass">Contact Me <CardAccountPhoneOutline class="ml-5"/></button>
+        <button @click="$emit('navClick','MyPortfolio')"  :class="buttonThreeClass"> Portfolio <Briefcase class="ml-5"/></button>
+        <button @click="$emit('navClick','MyResume')"  :class="buttonFourClass"> Resume <FileDocument class="ml-5"/></button>
 
 
 </div>
@@ -49,7 +49,13 @@ export default {
   data() {
     return {
       showMenu: false,
-      showButton:false
+      showButton:false,
+      toggleShowMenu:false,
+      buttonOneClass:'flex  justify-end  bg-yellow-300 absolute -left-48 top-1 hover:-left-1',
+      buttonTwoClass:'flex  justify-end  bg-yellow-300 absolute -left-48 top-20 hover:-left-1',
+      buttonThreeClass:'flex  justify-end  bg-yellow-300 absolute -left-48 top-40 hover:-left-1',
+      buttonFourClass:'flex  justify-end  bg-yellow-300 absolute -left-48 top-60 hover:-left-1',
+    
     };
   },
   mounted(){
@@ -58,6 +64,18 @@ export default {
   methods: {
     showMenus(){
         console.log("toggle menu");
+        this.toggleShowMenu = !this.toggleShowMenu;
+        if(this.toggleShowMenu){
+            this.buttonOneClass ='flex  justify-end  bg-yellow-300 absolute -left-1 top-1';
+            this.buttonTwoClass = 'flex  justify-end  bg-yellow-300 absolute -left-1 top-20 hover:-left-1';
+            this.buttonThreeClass = 'flex  justify-end  bg-yellow-300 absolute -left-1 top-40 hover:-left-1';
+            this.buttonFourClass ='flex  justify-end  bg-yellow-300 absolute -left-1 top-60 hover:-left-1';
+        } else {
+            this.buttonOneClass ='flex  justify-end  bg-yellow-300 absolute -left-48 top-1 hover:-left-1';
+            this.buttonTwoClass = 'flex  justify-end  bg-yellow-300 absolute -left-48 top-20 hover:-left-1';
+            this.buttonThreeClass = 'flex  justify-end  bg-yellow-300 absolute -left-48 top-40 hover:-left-1';
+            this.buttonFourClass ='flex  justify-end  bg-yellow-300 absolute -left-48 top-60 hover:-left-1';
+        }
     },  
     toggleMenu() {
       this.showMenu = !this.showMenu;
