@@ -46,7 +46,7 @@
             </p>
             <br/>
             <p>
-              After the bootcamp I continue to learn and grow, trying to learn as much technology as possible, because how to learn is what is the most important skill I can develop.
+              After the bootcamp I continue to learn and grow, trying to learn as much technology as possible, because learning how to learn is what is the most important skill I can develop.
             </p>
             <br />
           </div>
