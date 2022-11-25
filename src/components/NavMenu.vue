@@ -1,36 +1,26 @@
 <template>
-  <div id="NavMenu" class=" text-slate-900 font-josefin">
+  <div id="NavMenu" class=" text-slate-900 font-josefin overflow-hidden">
 
     <TransitionRoot
       :show="showMenu"
-      enter="transition ease-in-out duration-1500 transform"
-      enter-from="-translate-x-full"
-      enter-to="translate-x-0"
-      leave="transition ease-in-out duration-1500 transform"
-      leave-from="translate-x-0"
-      leave-to="-translate-x-full"    
+      enter="transition-opacity duration-[1000ms]"
+      enter-from="opacity-0"
+      enter-to="opacity-100"
+      leave="transition-opacity duration-[1000ms]"
+      leave-from="opacity-100"
+      leave-to="opacity-0"
     >
-      <ol id="menuOne" class="absolute left-1 top-1">
-        <li @click="$emit('navClick','AboutMe')">About Me</li>
-        <li @click="$emit('navClick','ContactMe')">Contact Me</li>
-      </ol>
+    <MenuIcon @click="showMenus" class="absolute top-5 cursor-pointer hover:bg-slate-500"/>
     </TransitionRoot>
 
-    <TransitionRoot
-      :show="showMenu"
-      enter="transition ease-in-out duration-1500 transform"
-      enter-from="-translate-x-full"
-      enter-to="translate-x-0"
-      leave="transition ease-in-out duration-1500 transform"
-      leave-from="translate-x-0"
-      leave-to="-translate-x-full"    
-    >
 
-    <ol id="menuTwo" class="absolute right-1 top-1">
-        <li @click="$emit('navClick','MyPortfolio')">Portfolio</li>
-        <li @click="$emit('navClick','MyResume')">Resume</li>
-       </ol>
-    </TransitionRoot>
+    <!-- <ol id="menuOne" class="absolute -left-48 top-1">
+        <ol id="menuTwo" class="absolute -right-40 top-1"> -->
+        <button @click="$emit('navClick','AboutMe')" class="flex  justify-end  bg-yellow-300 absolute -left-48 top-1 hover:-left-1"> About Me <AccountQuestion class="ml-5"/> </button>
+        <button @click="$emit('navClick','ContactMe')" class="flex  justify-end  bg-yellow-300 absolute -left-48 top-20 hover:-left-1">Contact Me <CardAccountPhoneOutline class="ml-5"/></button>
+        <button @click="$emit('navClick','MyPortfolio')" class="flex justify-end bg-yellow-300 absolute -left-48 top-40 hover:-left-1"> Portfolio <Briefcase class="ml-5"/></button>
+        <button @click="$emit('navClick','MyResume')" class="flex justify-end  bg-yellow-300 absolute -left-48 top-60 hover:-left-1"> Resume <FileDocument class="ml-5"/></button>
+
 
 </div>
 </template>
@@ -38,9 +28,23 @@
 <script>
 //import { Transition } from "vue";
 import { TransitionRoot } from "@headlessui/vue";
+import MenuIcon from 'vue-material-design-icons/Menu.vue';   
+import CardAccountPhoneOutline from 'vue-material-design-icons/CardAccountPhoneOutline.vue';
+import Briefcase from 'vue-material-design-icons/Briefcase.vue';
+import FileDocument from 'vue-material-design-icons/FileDocument.vue';
+import AccountQuestion from 'vue-material-design-icons/AccountQuestion.vue';
 
 export default {
   name: "NavMenu",
+  components: {
+    TransitionRoot,
+    MenuIcon,
+    CardAccountPhoneOutline,
+    Briefcase,
+    FileDocument,
+    AccountQuestion
+  },
+
   emits:['navClick'],
   data() {
     return {
@@ -52,6 +56,9 @@ export default {
     this.showMenu = true;
   },
   methods: {
+    showMenus(){
+        console.log("toggle menu");
+    },  
     toggleMenu() {
       this.showMenu = !this.showMenu;
       // setTimeout(() => {
@@ -62,23 +69,29 @@ export default {
             console.log("Nav Bar Stage change into:",newStage)
     }
   },
-  components: {
-    TransitionRoot,
-  },
 };
 </script>
 
 <style scoped>
-#menuOne li {
+NavMenu{
+    width: 100vw;
+}
+
+
+button {
   margin: 5px;
   padding: 5px;
   margin-top:15px;
-  width: 200px;
+  width: 220px;
   border: 1px solid blue;
   background-color: rgb(224, 24, 181);
-  text-align: right;
+  text-align: left;
   cursor: pointer;
+  transition: all 0.5s linear;
 }
+  
+
+</style>
 #menuTwo li {
     margin: 5px;
     padding: 5px;
@@ -88,7 +101,4 @@ export default {
     background-color: rgb(177, 14, 14);
     text-align: left;
     cursor: pointer;
-  }
-  
-
-</style>
+}

@@ -1,6 +1,6 @@
 <template>
   <div id="tiles" class=""></div>
-  <div id="content" class="text-3xl absolute" v-if="introDone">
+  <div id="content" class="text-3xl absolute overflow-hidden" v-if="introDone">
     <NavMenu @navClick="navStage"/>
     <component :is="this.currentStage" />
 
