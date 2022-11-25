@@ -3,24 +3,21 @@
 
     <TransitionRoot
       :show="showMenu"
-      enter="transition-opacity duration-[1000ms]"
+      enter="transition-opacity duration-[1500ms]"
       enter-from="opacity-0"
       enter-to="opacity-100"
-      leave="transition-opacity duration-[1000ms]"
+      leave="transition-opacity duration-[1500ms]"
       leave-from="opacity-100"
       leave-to="opacity-0"
     >
-    <MenuIcon @click="showMenus" class="absolute top-5 cursor-pointer hover:bg-slate-500"/>
-    </TransitionRoot>
-
-
-    <!-- <ol id="menuOne" class="absolute -left-48 top-1">
-        <ol id="menuTwo" class="absolute -right-40 top-1"> -->
+    <MenuIcon @click="showMenus" class="absolute top-5 cursor-pointer hover:bg-fuchsia-500"/>
+    
         <button @click="$emit('navClick','AboutMe')" :class="buttonOneClass"> About Me <AccountQuestion class="ml-5"/> </button>
         <button @click="$emit('navClick','ContactMe')" :class="buttonTwoClass">Contact Me <CardAccountPhoneOutline class="ml-5"/></button>
         <button @click="$emit('navClick','MyPortfolio')"  :class="buttonThreeClass"> Portfolio <Briefcase class="ml-5"/></button>
         <button @click="$emit('navClick','MyResume')"  :class="buttonFourClass"> Resume <FileDocument class="ml-5"/></button>
 
+    </TransitionRoot>
 
 </div>
 </template>
