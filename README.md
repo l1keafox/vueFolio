@@ -4,7 +4,7 @@
 
 My First Project with Vue, I'm creating my portfolio website.  Currently being published on netlify. 
 
-https://main--astonishing-kulfi-bf3f89.netlify.app/
+https://astonishing-kulfi-bf3f89.netlify.app/
 
 
 ## Table of Contents
