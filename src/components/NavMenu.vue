@@ -47,28 +47,35 @@ export default {
     return {
       showMenu: false,
       showButton:false,
-      toggleShowMenu:false,
-      buttonOneClass:'flex  justify-end  bg-yellow-300 absolute -left-48 top-1 hover:-left-1',
-      buttonTwoClass:'flex  justify-end  bg-yellow-300 absolute -left-48 top-20 hover:-left-1',
-      buttonThreeClass:'flex  justify-end  bg-yellow-300 absolute -left-48 top-40 hover:-left-1',
-      buttonFourClass:'flex  justify-end  bg-yellow-300 absolute -left-48 top-60 hover:-left-1',
+      toggleShowMenu:true,
+      // buttonOneClass:'flex  justify-end  bg-yellow-300 absolute -left-48 top-1 hover:-left-1',
+      // buttonTwoClass:'flex  justify-end  bg-yellow-300 absolute -left-48 top-20 hover:-left-1',
+      // buttonThreeClass:'flex  justify-end  bg-yellow-300 absolute -left-48 top-40 hover:-left-1',
+      // buttonFourClass:'flex  justify-end  bg-yellow-300 absolute -left-48 top-60 hover:-left-1',
+      buttonOneClass :'flex  justify-end  bg-yellow-300 absolute -left-1 top-1',
+      buttonTwoClass : 'flex  justify-end  bg-yellow-300 absolute -left-1 top-20 hover:-left-1',
+      buttonThreeClass : 'flex  justify-end  bg-yellow-300 absolute -left-1 top-40 hover:-left-1',
+      buttonFourClass : 'flex  justify-end  bg-yellow-300 absolute -left-1 top-60 hover:-left-1',
     
     };
   },
   mounted(){
     this.showMenu = true;
+    setTimeout(() => {
+      this.showMenus();
+    }, 500);
   },
   methods: {
     showMenus(){
         console.log("toggle menu");
         this.toggleShowMenu = !this.toggleShowMenu;
         if(this.toggleShowMenu){
-            this.buttonOneClass ='flex  justify-end  bg-yellow-300 absolute -left-1 top-1';
+            this.buttonOneClass ='flex  justify-end  bg-yellow-300 absolute -left-1 top-1 ';
             this.buttonTwoClass = 'flex  justify-end  bg-yellow-300 absolute -left-1 top-20 hover:-left-1';
             this.buttonThreeClass = 'flex  justify-end  bg-yellow-300 absolute -left-1 top-40 hover:-left-1';
             this.buttonFourClass ='flex  justify-end  bg-yellow-300 absolute -left-1 top-60 hover:-left-1';
         } else {
-            this.buttonOneClass ='flex  justify-end  bg-yellow-300 absolute -left-48 top-1 hover:-left-1';
+            this.buttonOneClass ='flex  justify-end  bg-yellow-300 absolute -left-48 top-1 hover:-left-1  ';
             this.buttonTwoClass = 'flex  justify-end  bg-yellow-300 absolute -left-48 top-20 hover:-left-1';
             this.buttonThreeClass = 'flex  justify-end  bg-yellow-300 absolute -left-48 top-40 hover:-left-1';
             this.buttonFourClass ='flex  justify-end  bg-yellow-300 absolute -left-48 top-60 hover:-left-1';
