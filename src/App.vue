@@ -5,7 +5,7 @@
     <component :is="this.currentStage" />
 
   </div>
-  <div id="welcome" class="text-3xl absolute pointer-events-none" v-if="introDone === false">
+  <div id="welcome" class="text-3xl pointer-events-none" v-if="introDone === false">
     <TransitionRoot
       :show="isShowing"
       enter="transition-opacity duration-[1000ms]"

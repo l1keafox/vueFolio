@@ -1,20 +1,34 @@
 <template>
-  <div
-    class="flex flex-col w-screen h-screen py-8 gap-x-2 gap-y-1 text-center items-center justify-evenly font-mono text-slate-300"
-  >
-    <h1 class="text-5xl font-bold">Portfolio</h1>
-    <div class="flex justify-around w-screen h-2/3">
+  <div class="flex w-screen h-screen py-8 gap-x-2 gap-y-1 text-center items-center justify-center font-mono text-slate-300">
       <button @click="indexLeft">left</button>
-      <div>
+      <div class="flex flex-col">
         <h1> {{Portfolios[pIndex].title}}</h1>
-      </div>
-      
+        <div class="flex  items-center justify-center ">
+            <img class="w-[40rem]" :src='Portfolios[pIndex].img' alt=""/>
+            <div class="flex flex-col w-1/2">
+                <p>  {{Portfolios[pIndex].description}} </p>
+                <hr/>
+                <br/>
+                <div class="flex items-center justify-around">
+                    <a :href="Portfolios[pIndex].repoLink" class="bg-yellow-900 p-2 border-2 border-green-300"> Repo </a>
+                    <a :href="Portfolios[pIndex].deployLink"> deployLink </a>
+                </div>
+            </div>
+        </div>
+        </div>
       <button @click="indexRight">right</button>
-    </div>
   </div>
 </template>
 
 <script>
+import reactFolio from './../assets/reactFolio.png';
+import bubble from './../assets/bubble.png';
+import middle from './../assets/middle.png';
+import projectOne from './../assets/projectOne.png';
+
+import team from './../assets/team.png';
+import weather from './../assets/weather.png';
+
 export default {
   name: "MyPortfolio",
   methods:{
@@ -42,7 +56,7 @@ export default {
           title: "Vue Professional Portfolio",
           description:
             "This Website, made from Vue and tailwind",
-          img: './../assets/reactFolio.png',
+          img: reactFolio,
           repoLink: "https://github.com/l1keafox/vueFolio",
           deployLink: "https://l1keafox.github.io/reactFolio/",
         },
@@ -50,7 +64,7 @@ export default {
           title: "React Professional Portfolio",
           description:
             "A different website that is made from scratch using React, Material UI, tailwind and headless ui.",
-          img: './../assets/reactFolio.png',
+          img: reactFolio,
           repoLink: "https://github.com/l1keafox/reactFolio",
           deployLink: "https://l1keafox.github.io/reactFolio/",
         },
@@ -59,7 +73,7 @@ export default {
           title: "Bubble Dungeonz",
           description:
             "A platform for game developers to host multi/single player games to interact with other users. Features a multiplayer bubble popping game, saved chat groups and customized display settings",
-          img: './../assets/reactFolio.png',
+          img: bubble,
           repoLink: "https://github.com/l1keafox/bubbleDungeonz",
           deployLink: "https://bubbledungeonz.herokuapp.com/",
         },
@@ -68,7 +82,7 @@ export default {
           title: "Middle-Where",
           description:
             "A web app to find a centralized location for a group of friends. Users can create accounts and login, using google maps to display location of friends and the central meeting spot. This was my second group project of six people, I conceived the idea and pushed for MVP",
-          img: './../assets/reactFolio.png',
+          img: middle,
           repoLink: "https://github.com/l1keafox/middleWhere",
           deployLink: "https://limitless-temple-38712.herokuapp.com/",
         },
@@ -76,7 +90,7 @@ export default {
           title: "RealTimeCommodities",
           description:
             "My first group project, taking 5 people to make. It is a web app that will pull commodities news/prices through an API call. Uses google graphs to show history of commodity prices.",
-          img: './../assets/reactFolio.png',
+          img: projectOne,
           repoLink: "https://github.com/l1keafox/RealTimeCommodities",
           deployLink: "https://l1keafox.github.io/RealTimeCommodities/",
         },
@@ -84,7 +98,7 @@ export default {
           title: "Weather DashBoard",
           description:
             "An web app just made with the front end with bootstrap, jquery and openweathermap.org for the api. It will take in cities and forecast 5 days in the future ",
-          img: './../assets/reactFolio.png',
+          img: weather,
           repoLink: "https://github.com/l1keafox/weatherDashboard",
           deployLink: "https://l1keafox.github.io/weatherDashboard/",
         },
@@ -92,7 +106,7 @@ export default {
           title: "Team maker",
           description:
             "A node.js application that uses inquire to ask question in the command line. Afterwards it will create an html page of the team you have entered in. ",
-          img: './../assets/reactFolio.png',
+          img: team,
           repoLink: "https://github.com/l1keafox/myTeamSetting",
           deployLink: "https://l1keafox.github.io/myTeamSetting/",
         },
