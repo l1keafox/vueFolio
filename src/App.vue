@@ -1,7 +1,9 @@
 <template>
   <div id="tiles" class=""></div>
   <div id="content" class="text-3xl absolute overflow-hidden" v-if="introDone">
-    <NavMenu @navClick="scrollToRef" />
+    <div id="navMenu">
+      <NavMenu @navClick="scrollToRef" />
+    </div>
     <div  class="contentSection">
       <HomePage />
     </div>
@@ -218,6 +220,10 @@ body {
   display: grid;
   grid-template-columns: repeat(var(--columns), 1fr);
   grid-template-rows: repeat(var(--rows), 1fr);
+}
+#navMenu{
+  z-index: 10000;
+  position: fixed;
 }
 .tile {
   position: relative;
