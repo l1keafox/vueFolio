@@ -176,8 +176,8 @@ export default {
   color: #5d6063;
 }
 :root {
-  --g1: rgb(107, 96, 201);
-  --g2: rgb(122, 10, 46);
+  --g1: rgb(72, 72, 73);
+  --g2: rgb(21, 10, 122);
 }
 .contentSection {
   opacity: 0;

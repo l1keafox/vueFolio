@@ -1,9 +1,9 @@
 <template>
-  <div class="flex w-screen h-screen text-center items-center justify-center font-mono text-slate-300">
+  <div class="flex flex-col w-screen h-screen text-center items-center justify-center font-mono text-slate-300">
+    <h1 class="text-7xl font-bold pb-5"> {{Portfolios[pIndex].title}}</h1>
     <div class="w-9/12 flex h-1/2 justify-between ">
       <button @click="indexLeft" class="bg-slate-700 p-3">left</button>
       <div class="flex flex-col px-10">
-        <h1> {{Portfolios[pIndex].title}}</h1>
         <div class="flex  items-center justify-center ">
             <img class="w-[40rem]" :src='Portfolios[pIndex].img' alt=""/>
             <div class="flex flex-col w-1/2 text-xl">
@@ -30,7 +30,7 @@ import projectOne from './../assets/projectOne.png';
 import vueFolio from './../assets/vueFolio.png';
 import team from './../assets/team.png';
 import weather from './../assets/weather.png';
-
+import htmlFolio from './../assets/htmlFolio.png';
 export default {
   name: "MyPortfolio",
     methods:{
@@ -55,18 +55,26 @@ export default {
       pIndex:0,
       Portfolios: [
         {
-          title: "Vue Professional Portfolio",
+          title: "Professional Vue Portfolio Mk.III",
           description:
-            "This Website, made from Vue and tailwind",
+            "My Third portfolio website made in November of 2022. This uses from Vue and tailwind",
           img: vueFolio,
           repoLink: "https://github.com/l1keafox/vueFolio",
           deployLink: "https://l1keafox.github.io/reactFolio/",
         },
         {
-          title: "React Professional Portfolio",
+          title: "Professional React Portfolio Mk.II",
           description:
-            "A different website that is made from scratch using React, Material UI, tailwind and headless ui.",
+            "My second portfolio made at the end of the bootcamp in Oct of 2022. It uses React, Material UI, tailwind and headless ui.",
           img: reactFolio,
+          repoLink: "https://github.com/l1keafox/Rayfolio",
+          deployLink: "https://l1keafox.github.io/Rayfolio/",
+        },
+        {
+          title: "My First Portoflio",
+          description:
+            "Made in first two weeks of bootcamp made in Sept of 2022, using only HTML/CSS/JS with no frame work.",
+          img: htmlFolio,
           repoLink: "https://github.com/l1keafox/reactFolio",
           deployLink: "https://l1keafox.github.io/reactFolio/",
         },
