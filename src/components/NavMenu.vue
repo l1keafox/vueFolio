@@ -1,5 +1,5 @@
 <template>
-  <div id="NavMenu" class=" text-slate-900 font-josefin overflow-hidden">
+  <div id="NavMenu" class=" text-slate-900 font-josefin fixed">
 
     <TransitionRoot
       :show="showMenu"
@@ -10,11 +10,10 @@
       leave-from="opacity-100"
       leave-to="opacity-0"
     >
-    <MenuIcon @click="showMenus" class="absolute top-5 cursor-pointer hover:bg-fuchsia-500"/>
     
         <button @click="$emit('navClick','AboutMe')" :class="buttonOneClass"> About Me <AccountQuestion class="ml-5"/> </button>
-        <button @click="$emit('navClick','ContactMe')" :class="buttonTwoClass">Contact Me <CardAccountPhoneOutline class="ml-5"/></button>
-        <button @click="$emit('navClick','MyPortfolio')"  :class="buttonThreeClass"> Portfolio <Briefcase class="ml-5"/></button>
+        <button @click="$emit('navClick','MyPortfolio')"  :class="buttonTwoClass"> Portfolio <Briefcase class="ml-5"/></button>
+        <button @click="$emit('navClick','ContactMe')" :class="buttonThreeClass">Contact Me <CardAccountPhoneOutline class="ml-5"/></button>
         <button @click="$emit('navClick','MyResume')"  :class="buttonFourClass"> Resume <FileDocument class="ml-5"/></button>
 
     </TransitionRoot>
@@ -25,7 +24,6 @@
 <script>
 //import { Transition } from "vue";
 import { TransitionRoot } from "@headlessui/vue";
-import MenuIcon from 'vue-material-design-icons/Menu.vue';   
 import CardAccountPhoneOutline from 'vue-material-design-icons/CardAccountPhoneOutline.vue';
 import Briefcase from 'vue-material-design-icons/Briefcase.vue';
 import FileDocument from 'vue-material-design-icons/FileDocument.vue';
@@ -35,7 +33,6 @@ export default {
   name: "NavMenu",
   components: {
     TransitionRoot,
-    MenuIcon,
     CardAccountPhoneOutline,
     Briefcase,
     FileDocument,

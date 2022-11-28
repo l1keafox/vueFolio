@@ -1,11 +1,28 @@
 <template>
   <div id="tiles" class=""></div>
   <div id="content" class="text-3xl absolute overflow-hidden" v-if="introDone">
-    <NavMenu @navClick="navStage"/>
-    <component :is="this.currentStage" />
-
+    <NavMenu @navClick="scrollToRef" />
+    <div  class="contentSection">
+      <HomePage />
+    </div>
+    <div ref="AboutMe" class="contentSection">
+      <AboutMe />
+    </div >
+    <div ref="MyPortfolio"  class="contentSection">
+      <MyPortfolio />
+    </div>
+    <div ref="MyResume"  class="contentSection">
+      <MyResume />
+    </div>
+    <div ref="ContactMe"  class="contentSection">
+      <ContactMe />
+    </div>
   </div>
-  <div id="welcome" class="text-3xl pointer-events-none" v-if="introDone === false">
+  <div
+    id="welcome"
+    class="text-3xl pointer-events-none"
+    v-if="introDone === false"
+  >
     <TransitionRoot
       :show="isShowing"
       enter="transition-opacity duration-[1000ms]"
@@ -25,13 +42,12 @@ import anime from "animejs/lib/anime.es.js";
 import LandingPage from "./pages/LandingPage";
 import HomePage from "./pages/HomePage";
 import { TransitionRoot } from "@headlessui/vue";
-import NavMenu from "./components/NavMenu" 
+import NavMenu from "./components/NavMenu";
 
 import AboutMe from "./pages/AboutMe";
 import ContactMe from "./pages/ContactMe";
 import MyResume from "./pages/MyResume";
 import MyPortfolio from "./pages/MyPortfolio";
-
 
 export default {
   name: "App",
@@ -43,22 +59,50 @@ export default {
     MyPortfolio,
     AboutMe,
     ContactMe,
-    NavMenu
+    NavMenu,
   },
   data() {
     return {
       introDone: false,
       isShowing: false,
-      currentStage:''
+      currentStage: "",
     };
   },
-  methods:{
-    navStage(newstage){
-      console.log('changing stage into:',newstage);
+  methods: {
+    navStage(newstage) {
+      console.log("changing stage into:", newstage);
       this.currentStage = newstage;
-    }
-  },  
+    },
+    scrollToRef(refName) {
+      console.log("Scroll or ref", refName);
+      let element = this.$refs[refName];
+      let top = element.offsetTop;
+      window.scrollTo({
+        top,
+        left: 0,
+        behavior: "smooth",
+      });
+    },
+  },
+  updated(){
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        console.log(entry, entry.isIntersecting);
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        } else {
+          entry.target.classList.remove("show");
+        }
+      });
+    });
+    const hidden = document.querySelectorAll(".contentSection");
+    hidden.forEach((el) => observer.observe(el));
+
+  },
   mounted() {
+
+
+
     let toggle = false;
     this.isShowing = true;
     let wrapper = document.getElementById("tiles");
@@ -132,6 +176,17 @@ export default {
 :root {
   --g1: rgb(107, 96, 201);
   --g2: rgb(122, 10, 46);
+}
+.contentSection {
+  opacity: 0;
+  filter: blur(5px);
+  transition: all 1s;
+  transform: translateX(-100%);
+}
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
 }
 @keyframes background-pan {
   from {

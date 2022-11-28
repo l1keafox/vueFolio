@@ -31,7 +31,7 @@ import weather from './../assets/weather.png';
 
 export default {
   name: "MyPortfolio",
-  methods:{
+    methods:{
     indexLeft(){
         this.pIndex--;
         if(this.pIndex < 0){

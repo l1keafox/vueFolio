@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col items-center justify-center h-screen text-slate-50 text-9xl">
+    <div class="flex flex-col items-center justify-center h-screen text-slate-50 text-9xl absolute top-0">
         <div class="font-josefin ml-5">
           RAYMOND LEWIS
         </div>
