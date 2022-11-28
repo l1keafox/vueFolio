@@ -1,12 +1,13 @@
 <template>
-  <div class="flex w-screen h-screen py-8 gap-x-2 gap-y-1 text-center items-center justify-center font-mono text-slate-300">
-      <button @click="indexLeft">left</button>
-      <div class="flex flex-col">
+  <div class="flex w-screen h-screen text-center items-center justify-center font-mono text-slate-300">
+    <div class="w-9/12 flex h-1/2 justify-between ">
+      <button @click="indexLeft" class="bg-slate-700 p-3">left</button>
+      <div class="flex flex-col px-10">
         <h1> {{Portfolios[pIndex].title}}</h1>
         <div class="flex  items-center justify-center ">
             <img class="w-[40rem]" :src='Portfolios[pIndex].img' alt=""/>
-            <div class="flex flex-col w-1/2">
-                <p>  {{Portfolios[pIndex].description}} </p>
+            <div class="flex flex-col w-1/2 text-xl">
+                <p class="text-xl">  {{Portfolios[pIndex].description}} </p>
                 <hr/>
                 <br/>
                 <div class="flex items-center justify-around">
@@ -16,7 +17,8 @@
             </div>
         </div>
         </div>
-      <button @click="indexRight">right</button>
+      <button class="bg-slate-700 p-3" @click="indexRight">right</button>
+    </div>
   </div>
 </template>
 
@@ -25,7 +27,7 @@ import reactFolio from './../assets/reactFolio.png';
 import bubble from './../assets/bubble.png';
 import middle from './../assets/middle.png';
 import projectOne from './../assets/projectOne.png';
-
+import vueFolio from './../assets/vueFolio.png';
 import team from './../assets/team.png';
 import weather from './../assets/weather.png';
 
@@ -56,7 +58,7 @@ export default {
           title: "Vue Professional Portfolio",
           description:
             "This Website, made from Vue and tailwind",
-          img: reactFolio,
+          img: vueFolio,
           repoLink: "https://github.com/l1keafox/vueFolio",
           deployLink: "https://l1keafox.github.io/reactFolio/",
         },

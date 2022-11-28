@@ -13,8 +13,8 @@
     
         <button @click="$emit('navClick','AboutMe')" :class="buttonOneClass"> About Me <AccountQuestion class="ml-5"/> </button>
         <button @click="$emit('navClick','MyPortfolio')"  :class="buttonTwoClass"> Portfolio <Briefcase class="ml-5"/></button>
-        <button @click="$emit('navClick','ContactMe')" :class="buttonThreeClass">Contact Me <CardAccountPhoneOutline class="ml-5"/></button>
-        <button @click="$emit('navClick','MyResume')"  :class="buttonFourClass"> Resume <FileDocument class="ml-5"/></button>
+        <button @click="$emit('navClick','MyResume')"  :class="buttonThreeClass"> Resume <FileDocument class="ml-5"/></button>
+        <button @click="$emit('navClick','ContactMe')" :class="buttonFourClass">Contact Me <CardAccountPhoneOutline class="ml-5"/></button>
 
     </TransitionRoot>
 
