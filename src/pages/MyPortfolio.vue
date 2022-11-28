@@ -23,10 +23,14 @@
 </template>
 
 <script>
-import reactFolio from './../assets/reactfolio.png';
-import middle from './../assets/middle.png';
-import projectOne from './../assets/projectOne.png';
-import htmlFolio from './../assets/htmlFolio.png';
+import reactFolio from './../assets/bubble.png';
+import middle from './../assets/bubble.png';
+import projectOne from './../assets/bubble.png';
+import htmlFolio from './../assets/bubble.png';
+// import reactFolio from './../assets/reactfolio.png';
+// import middle from './../assets/middle.png';
+// import projectOne from './../assets/projectOne.png';
+// import htmlFolio from './../assets/htmlFolio.png';
 
 import bubble from './../assets/bubble.png';
 
