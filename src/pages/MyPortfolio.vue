@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import reactFolio from './../assets/bubble.png';
+import reactFolio from './../assets/reactfolio.png';
 import middle from './../assets/bubble.png';
 import projectOne from './../assets/bubble.png';
 import htmlFolio from './../assets/bubble.png';
@@ -34,7 +34,7 @@ import htmlFolio from './../assets/bubble.png';
 
 import bubble from './../assets/bubble.png';
 
-import vueFolio from './../assets/vueFolio.png';
+import vuefolio from './../assets/vuefolio.png';
 import team from './../assets/team.png';
 import weather from './../assets/weather.png';
 export default {
@@ -64,7 +64,7 @@ export default {
           title: "Professional Vue Portfolio Mk.III",
           description:
             "My Third portfolio website made in November of 2022. This uses from Vue and tailwind",
-          img: vueFolio,
+          img: vuefolio,
           repoLink: "https://github.com/l1keafox/vueFolio",
           deployLink: "https://l1keafox.github.io/reactFolio/",
         },
