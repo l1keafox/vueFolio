@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import reactFolio from './../assets/bubble.png';
-import middle from './../assets/bubble.png';
+import reactFolio from './../assets/react.png';
+import middle from './../assets/mid.png';
 import projectOne from './../assets/bubble.png';
 import htmlFolio from './../assets/bubble.png';
 // import reactFolio from './../assets/reactfolio.png';
@@ -33,10 +33,9 @@ import htmlFolio from './../assets/bubble.png';
 // import htmlFolio from './../assets/htmlFolio.png';
 
 import bubble from './../assets/bubble.png';
-
-import vuefolio from './../assets/bubble.png';
-import team from './../assets/bubble.png';
-import weather from './../assets/bubble.png';
+import vuefolio from './../assets/vuefolio.png';
+import team from './../assets/team.png';
+import weather from './../assets/weather.png';
 export default {
   name: "MyPortfolio",
     methods:{
