@@ -25,8 +25,8 @@
 <script>
 import reactFolio from './../assets/react.png';
 import middle from './../assets/mid.png';
-import projectOne from './../assets/bubble.png';
-import htmlFolio from './../assets/bubble.png';
+import projectOne from './../assets/one.png';
+import htmlFolio from './../assets/html.png';
 // import reactFolio from './../assets/reactfolio.png';
 // import middle from './../assets/middle.png';
 // import projectOne from './../assets/projectOne.png';
