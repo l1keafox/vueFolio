@@ -103,7 +103,7 @@ button {
   margin-top:15px;
   width: 220px;
   border: 1px solid blue;
-  background-color: rgb(224, 24, 181);
+  background-color: rgb(24, 127, 224);
   text-align: left;
   cursor: pointer;
   transition: all 0.5s linear;

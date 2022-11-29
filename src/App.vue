@@ -184,7 +184,7 @@ export default {
   filter: blur(5px);
   transition: all 1s;
   transform: translateX(-100%);
-  height: 70vh;
+  height: 85vh;
 }
 .show {
   opacity: 1;
