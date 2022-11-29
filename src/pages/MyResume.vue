@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import Resume from '../assets/reactfolio';
+import Resume from '../assets/blah.png';
 
     export default {
         name:"MyResume",
