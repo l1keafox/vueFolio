@@ -182,14 +182,19 @@ export default {
 .contentSection {
   opacity: 0;
   filter: blur(5px);
-  transition: all 1s;
-  transform: translateX(-100%);
+  transition: all 0.5s;
+  transform: translateY(100%);
   height: 85vh;
 }
 .show {
   opacity: 1;
   filter: blur(0);
-  transform: translateX(0);
+  transform: translateY(0);
+}
+@media(prefers-reduced-motion){
+  .contentSection{
+    transition:none;
+  }
 }
 @keyframes background-pan {
   from {

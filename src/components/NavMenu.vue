@@ -60,7 +60,7 @@ export default {
     this.showMenu = true;
     setTimeout(() => {
       this.showMenus();
-    }, 500);
+    }, 2000);
   },
   methods: {
     showMenus(){

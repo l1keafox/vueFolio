@@ -2,22 +2,22 @@
   <div class="flex flex-col w-screen h-screen text-center items-center justify-center font-mono text-slate-300">
     <h1 class="text-7xl font-bold pb-5"> {{Portfolios[pIndex].title}}</h1>
     <div class="w-9/12 flex h-1/2 justify-between ">
-      <button @click="indexLeft" class="bg-slate-700 p-3">left</button>
+      <button @click="indexLeft" class="bg-slate-600 p-3">Prev</button>
       <div class="flex flex-col px-10">
         <div class="flex  items-center justify-center ">
             <img class="w-[40rem]" :src='Portfolios[pIndex].img' alt=""/>
-            <div class="flex flex-col w-1/2 text-xl">
+            <div class="flex flex-col w-1/2 text-xl ml-5">
                 <p class="text-xl">  {{Portfolios[pIndex].description}} </p>
                 <hr/>
                 <br/>
-                <div class="flex items-center justify-around">
-                    <a :href="Portfolios[pIndex].repoLink" class="bg-yellow-900 p-2 border-2 border-green-300"> Repo </a>
-                    <a :href="Portfolios[pIndex].deployLink"> deployLink </a>
+                <div class="flex flex-col items-center justify-around">
+                    <a :href="Portfolios[pIndex].repoLink" class="bg-red-400 p-2 mb-3 border-2 border-blue-300 text-black w-2/3"> Git Repo </a>
+                    <a :href="Portfolios[pIndex].deployLink" class="bg-green-400 p-2 border-2 border-blue-300 text-black  w-2/3"> Deployed Link </a>
                 </div>
             </div>
         </div>
         </div>
-      <button class="bg-slate-700 p-3" @click="indexRight">right</button>
+      <button class="bg-slate-600 p-3" @click="indexRight">Next</button>
     </div>
   </div>
 </template>
@@ -65,23 +65,23 @@ export default {
             "My Third portfolio website made in November of 2022. This uses from Vue and tailwind",
           img: vuefolio,
           repoLink: "https://github.com/l1keafox/vueFolio",
-          deployLink: "https://l1keafox.github.io/reactFolio/",
+          deployLink: "https://gorgeous-sorbet-b95f3f.netlify.app/",
         },
         {
           title: "Professional React Portfolio Mk.II",
           description:
             "My second portfolio made at the end of the bootcamp in Oct of 2022. It uses React, Material UI, tailwind and headless ui.",
           img: reactFolio,
-          repoLink: "https://github.com/l1keafox/Rayfolio",
-          deployLink: "https://l1keafox.github.io/Rayfolio/",
+          repoLink: "https://github.com/l1keafox/reactFolio",
+          deployLink: "https://l1keafox.github.io/reactFolio/",
         },
         {
           title: "My First Portoflio",
           description:
             "Made in first two weeks of bootcamp made in Sept of 2022, using only HTML/CSS/JS with no frame work.",
           img: htmlFolio,
-          repoLink: "https://github.com/l1keafox/reactFolio",
-          deployLink: "https://l1keafox.github.io/reactFolio/",
+          repoLink: "https://github.com/l1keafox/Rayfolio",
+          deployLink: "https://l1keafox.github.io/Rayfolio/",
         },
 
         {
