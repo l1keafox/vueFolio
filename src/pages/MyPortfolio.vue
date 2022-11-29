@@ -33,7 +33,7 @@ import htmlFolio from './../assets/bubble.png';
 // import htmlFolio from './../assets/htmlFolio.png';
 
 import bubble from './../assets/bubble.png';
-import vuefolio from './../assets/vuefolio.png';
+import vuefolio from './../assets/vue.png';
 import team from './../assets/team.png';
 import weather from './../assets/weather.png';
 export default {
