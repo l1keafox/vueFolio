@@ -11,10 +11,10 @@
       leave-to="opacity-0"
     >
     
-        <button @click="$emit('navClick','AboutMe')" :class="buttonOneClass"> About Me <AccountQuestion class="ml-5"/> </button>
-        <button @click="$emit('navClick','MyPortfolio')"  :class="buttonTwoClass"> Portfolio <Briefcase class="ml-5"/></button>
-        <button @click="$emit('navClick','MyResume')"  :class="buttonThreeClass"> Resume <FileDocument class="ml-5"/></button>
-        <button @click="$emit('navClick','ContactMe')" :class="buttonFourClass">Contact Me <CardAccountPhoneOutline class="ml-5"/></button>
+        <button @click="$emit('navClick','AboutMe')" :class=" buttonOneClass" class = "btn" > <div data-value="About me"  @mouseover="doThis">About me</div> <AccountQuestion class="ml-5"/> </button>
+        <button @click="$emit('navClick','MyPortfolio')"  :class="buttonTwoClass" class = "btn" > <div data-value="Portfolio"  @mouseover="doThis"> Portfolio </div><Briefcase class="ml-5"/></button>
+        <button @click="$emit('navClick','MyResume')"   :class="buttonThreeClass" class = "btn" > <div data-value="Resume"  @mouseover="doThis">Resume </div><FileDocument class="ml-5"/></button>
+        <button @click="$emit('navClick','ContactMe')" :class="buttonFourClass" class = "btn" ><div data-value="Contact Me"  @mouseover="doThis">Contact Me </div><CardAccountPhoneOutline class="ml-5"/></button>
 
     </TransitionRoot>
 
@@ -61,8 +61,38 @@ export default {
     setTimeout(() => {
       this.showMenus();
     }, 2000);
+
+		let docu = document.getElementsByClassName("btn");
+    console.log(docu.length);
+    // docu.forEach(doc=>{
+    //   console.log(doc);
+    //   doc.onmouseover = (event)=>{
+    //     console.log(event);
+    //   }
+    // })
+    //button
+
   },
   methods: {
+    doThis(event){
+		// const letters = "ABCEDFGHIJKLMNOPQRSTUVWXYZ";
+    const letters = "abcdefghijklmnopqrstuvwxyz";
+    console.log(event);
+		let iterations = 0;
+		const interval = setInterval(() => {
+			event.target.innerText = event.target.innerText
+				.split("")
+				.map((letter, index) => {
+					if (index < iterations) {
+						return event.target.dataset.value[index];
+					}
+					return letters[Math.floor(Math.random() * 26)];
+				})
+				.join("");
+			if (iterations >= event.target.innerText.length) clearInterval(interval);
+			iterations += 1 / 3;
+		}, 30);
+  },  
     showMenus(){
         console.log("toggle menu");
         this.toggleShowMenu = !this.toggleShowMenu;

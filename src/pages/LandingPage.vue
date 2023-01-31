@@ -17,7 +17,7 @@ export default {
 	},
 	mounted() {
 		const letters = "ABCEDFGHIJKLMNOPQRSTUVWXYZ";
-    let docu = document.querySelector("h1");
+		let docu = document.querySelector("h1");
 		let iterations = 0;
 		const interval = setInterval(() => {
 			docu.innerText = docu.innerText
