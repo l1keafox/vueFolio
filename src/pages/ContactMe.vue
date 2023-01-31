@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col w-screen h-screen py-8 gap-x-2 gap-y-1 text-center items-center justify-center font-mono text-slate-300">
+    <div class="flex flex-col w-screen h-screen min-h-[50%] py-8 gap-x-2 gap-y-1 text-center items-center justify-center font-mono text-slate-300">
         <h1> Contact Me </h1>
         <br/>
         <div class ="flex justify-around items-center">
