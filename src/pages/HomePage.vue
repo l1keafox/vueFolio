@@ -1,7 +1,7 @@
 <template>
 
 
-  <div class="flex flex-col h-[40rem] py-8 gap-x-2 gap-y-1 text-center items-center justify-center font-mono text-slate-700 bg-slate-400 top-96" >
+  <div class="flex flex-col h-[40rem] py-8 gap-x-2 gap-y-1 text-center items-center justify-center font-mono text-slate-700 bg-slate-400 top-10" >
     <Transition name="fade">
         <div v-if="showHome" class="w-4/5 mx-auto ">
             <div class="flex justify-center items-center space-x-16 text-5xl font-noto dark:text-slate-700">

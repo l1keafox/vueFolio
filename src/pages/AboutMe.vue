@@ -1,14 +1,14 @@
 <template>
-    <div class="flex flex-col w-screen h-[40rem] py-8 gap-x-2 gap-y-1 text-center items-center justify-center font-mono bg-yellow-300">
+    <div class="flex flex-col w-screen h-[42rem] py-8 gap-x-2 gap-y-1 text-center items-center justify-center font-noto bg-yellow-300">
 
-        <h1 className="text-3xl font-bold text-center dark:text-slate-700 mb-10"> About Me </h1>
+        <h1 className="text-3xl font-bold text-center dark:text-slate-700 "> About Me </h1>
 
-        <div className="md:flex w-4/5 mx-auto">
-          <img className="w-80 h-80" src='./../assets/avatar.jpg' />
-
+        <div className="flex w-4/5 mx-auto">
+          <img className="w-80 h-80 top-[7rem] relative" src='./../assets/avatar.jpg' />
           <div className="text-base p-2 font-serif dark:text-slate-700">
+            <h1> Hello!</h1>
             <p>
-              Hello! My name is Ray and I am from Boulder, Colorado. I am a
+              My name is Ray and I am from Boulder, Colorado. I am a
               South Korean adoptee who was adopted with my older brother and
               sister when I was five years old.
             </p>
