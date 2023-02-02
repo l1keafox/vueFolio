@@ -234,9 +234,12 @@ export default {
   }
 }
 #content {
-  display: fixed;
+
   left: 0%;
   top: 0%;
+  height: 200%;
+  width: 200%;
+  position: absolute;  
 }
 #welcome {
   display: fixed;
@@ -260,6 +263,8 @@ body {
   z-index: 10000;
   position: fixed;
 }
+
+</style>
 .tile {
   position: relative;
 }
@@ -273,4 +278,3 @@ body {
   position: absolute;
   inset: 1px;
 }
-</style>

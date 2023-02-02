@@ -1,10 +1,13 @@
 <template>
+  <div class="tile">
+    <img  data-nav="1" src="https://images.unsplash.com/photo-1670022326053-74ee3cdc1cc0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"/>
+  </div> 
+  
 
 
-  <div id="aboutMe" class=" bg-yellow-300 w-96 h-14" >
-    <!-- <div id="aboutMe" class="flex flex-col py-8 gap-x-2 gap-y-1 text-center items-center justify-center font-mono text-slate-300 bg-yellow-300 w-96 h-14" > -->
+    <!-- <div id="aboutMe" class="flex flex-col py-8 gap-x-2 gap-y-1 text-center items-center justify-center font-mono text-slate-300 bg-yellow-300 w-96 h-14" > 
       <div class="w-4/5 mx-auto ">
-            <!-- <div class="flex justify-center items-center space-x-16 text-5xl font-noto dark:text-slate-400">
+             <div class="flex justify-center items-center space-x-16 text-5xl font-noto dark:text-slate-400">
               <p>
                 I am a<span class="text-green-400"> full stack </span>software
                 engineer with a background in
@@ -33,10 +36,10 @@
             <img height="32" width="32" src="https://unpkg.com/simple-icons@v7/icons/nodedotjs.svg" />   
             <img height="32" width="32" src="https://unpkg.com/simple-icons@v7/icons/npm.svg" />   
             <img height="32" width="32" src="https://unpkg.com/simple-icons@v7/icons/vuedotjs.svg" />   
-            </div> -->
+            </div>
           </div> 
 
-      </div>
+      </div> -->
 </template>
 
 <script>
@@ -68,13 +71,21 @@
 <style scoped>
 
 
-#aboutMe{
+.tile{
+  position: absolute;
   left: 30%;
-  top: 40%;
-  
+  top: 40%;  
 }
-
+.tile > img{
+  height: 100%;
+  width: 100%;
+  object-fit:cover;
+  border-radius:inherit;
+  height: 15%;
+  width:25% ;
+}
 </style>
 position: absolute;
 height: 15%;
 width:25% ;
+
