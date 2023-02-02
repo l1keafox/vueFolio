@@ -259,12 +259,7 @@ body {
   grid-template-columns: repeat(var(--columns), 1fr);
   grid-template-rows: repeat(var(--rows), 1fr);
 }
-#navMenu{
-  z-index: 10000;
-  position: fixed;
-}
 
-</style>
 .tile {
   position: relative;
 }
@@ -277,4 +272,9 @@ body {
   content: "";
   position: absolute;
   inset: 1px;
+}
+</style>
+#navMenu{
+  z-index: 10000;
+  position: fixed;
 }

@@ -1,6 +1,13 @@
 <template>
-  <div class="tile">
-    <img  data-nav="1" src="https://images.unsplash.com/photo-1670022326053-74ee3cdc1cc0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"/>
+  <div class="section">
+    <!-- <img  data-nav="1" src="https://images.unsplash.com/photo-1670022326053-74ee3cdc1cc0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"/> -->
+    <p w-full>
+    I am a<span class="text-green-400"> full stack </span>software
+    engineer with a background in
+    <span class="text-red-600">malware</span> research. I enjoy
+    the process of creating programs, websites, clothes and
+    relationships.
+    </p>
   </div> 
   
 
@@ -9,11 +16,6 @@
       <div class="w-4/5 mx-auto ">
              <div class="flex justify-center items-center space-x-16 text-5xl font-noto dark:text-slate-400">
               <p>
-                I am a<span class="text-green-400"> full stack </span>software
-                engineer with a background in
-                <span class="text-red-600">malware</span> research. I enjoy
-                the process of creating programs, websites, clothes and
-                relationships.
               </p>
             </div>
             <br/>
@@ -71,18 +73,21 @@
 <style scoped>
 
 
-.tile{
+.section{
   position: absolute;
   left: 30%;
   top: 40%;  
+  width: 25% ;
+  background-color: aqua;
 }
-.tile > img{
+.section > p{
   height: 100%;
   width: 100%;
   object-fit:cover;
   border-radius:inherit;
   height: 15%;
-  width:25% ;
+  width: 25% ;
+
 }
 </style>
 position: absolute;
