@@ -2,7 +2,7 @@
   <div class="flex flex-col w-screen h-screen text-center items-center justify-center font-mono text-slate-300">
     <h1 class="text-7xl font-bold pb-5"> {{Portfolios[pIndex].title}}</h1>
     <div class="w-9/12 flex h-1/2 justify-between ">
-      <button @click="indexLeft" class="bg-slate-600 p-3">Prev</button>
+      <button @click="indexLeft" class="bg-slate-600 p-3 h-48">Prev</button>
       <div class="flex flex-col px-10">
         <div class="flex  items-center justify-center ">
             <img class="w-[40rem]" :src='Portfolios[pIndex].img' alt=""/>
@@ -17,7 +17,7 @@
             </div>
         </div>
         </div>
-      <button class="bg-slate-600 p-3" @click="indexRight">Next</button>
+      <button class="bg-slate-600 p-3  h-48" @click="indexRight">Next</button>
     </div>
   </div>
 </template>
