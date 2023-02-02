@@ -4,13 +4,13 @@
     <div id="navMenu">
       <NavMenu @navClick="scrollToRef" />
     </div>
-    <div  class="contentSection">
+    <div  class="contentSection flex text-center items-center justify-center">
       <HomePage />
     </div>
-    <div ref="AboutMe" class="contentSection">
+    <div ref="AboutMe" class="contentSection flex text-center items-center justify-center">
       <AboutMe />
     </div >
-    <div ref="MyPortfolio"  class="contentSection">
+    <div ref="MyPortfolio"  class="contentSection flex text-center items-center justify-center ">
       <MyPortfolio />
     </div>
     <div ref="MyResume"  class="contentSection">
@@ -184,7 +184,7 @@ export default {
   filter: blur(5px);
   transition: all 0.5s;
   transform: translateY(100%);
-  height: 85vh;
+  height: 55rem;
 }
 .show {
   opacity: 1;

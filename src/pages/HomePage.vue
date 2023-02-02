@@ -1,10 +1,10 @@
 <template>
 
 
-  <div class="flex flex-col  h-screen py-8 gap-x-2 gap-y-1 text-center items-center justify-center font-mono text-slate-300" >
-      <Transition name="fade">
+  <div class="flex flex-col h-[40rem] py-8 gap-x-2 gap-y-1 text-center items-center justify-center font-mono text-slate-700 bg-slate-400 top-96" >
+    <Transition name="fade">
         <div v-if="showHome" class="w-4/5 mx-auto ">
-            <div class="flex justify-center items-center space-x-16 text-5xl font-noto dark:text-slate-400">
+            <div class="flex justify-center items-center space-x-16 text-5xl font-noto dark:text-slate-700">
               <p>
                 I am a<span class="text-green-400"> full stack </span>software
                 engineer with a background in
@@ -35,9 +35,8 @@
             <img height="32" width="32" src="https://unpkg.com/simple-icons@v7/icons/vuedotjs.svg" />   
             </div>
           </div> 
-        </Transition>
-
-      </div>
+    </Transition>
+  </div>
 </template>
 
 <script>

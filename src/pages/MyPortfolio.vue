@@ -1,23 +1,28 @@
 <template>
-  <div class="flex flex-col w-screen h-screen text-center items-center justify-center font-mono text-slate-300">
-    <h1 class="text-7xl font-bold pb-5"> {{Portfolios[pIndex].title}}</h1>
-    <div class="w-9/12 flex h-1/2 justify-between ">
-      <button @click="indexLeft" class="bg-slate-600 p-3 h-48">Prev</button>
-      <div class="flex flex-col px-10">
-        <div class="flex  items-center justify-center ">
-            <img class="w-[40rem]" :src='Portfolios[pIndex].img' alt=""/>
-            <div class="flex flex-col w-1/2 text-xl ml-5">
-                <p class="text-xl">  {{Portfolios[pIndex].description}} </p>
+  <div class="flex flex-col w-screen h-[40rem] text-center items-center justify-center font-mono text-slate-300 bg-blue-300">
+    <h1 class="text-7xl font-bold pb-5 text-black"> {{Portfolios[pIndex].title}}</h1>
+    <div class="w-9/12 flex h-2/3 bg-blue-400">
+      <!-- <div class="flex flex-col px-10">
+        <div class="flex h-96 items-center justify-center "> -->
+            <img class="w-1/2" :src='Portfolios[pIndex].img' alt=""/>
+            <div class="flex flex-col items-center justify-around w-1/2">
+              <p class="text-xl h-1/2 flex items-center justify-around">  {{Portfolios[pIndex].description}} </p>
+              <div class ="h-1/2 w-full flex items-center justify-around">
+                <a :href="Portfolios[pIndex].repoLink" class="bg-red-400 text-lg p-2 border-2 border-blue-300 text-black w-1/3"> Git Repo </a>
+                <a :href="Portfolios[pIndex].deployLink" class="bg-green-400  text-lg p-2 border-2 border-blue-300 text-black w-1/3"> Deployed Link </a>
+              </div>
+            </div>
+
+            <!-- <div class="flex flex-col w-1/2 text-xl ml-5">
                 <hr/>
                 <br/>
-                <div class="flex flex-col items-center justify-around">
-                    <a :href="Portfolios[pIndex].repoLink" class="bg-red-400 p-2 mb-3 border-2 border-blue-300 text-black w-2/3"> Git Repo </a>
-                    <a :href="Portfolios[pIndex].deployLink" class="bg-green-400 p-2 border-2 border-blue-300 text-black  w-2/3"> Deployed Link </a>
-                </div>
-            </div>
-        </div>
-        </div>
-      <button class="bg-slate-600 p-3  h-48" @click="indexRight">Next</button>
+            </div> -->
+        <!-- </div>
+        </div>-->
+    </div>
+    <div class = "flex pt-2 w-1/3 justify-around">
+      <button class="bg-slate-600 p-3 " @click="indexRight">Next</button> 
+      <button @click="indexLeft" class="bg-slate-600 p-3">Prev</button> 
     </div>
   </div>
 </template>
