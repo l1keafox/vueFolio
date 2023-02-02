@@ -1,23 +1,20 @@
 <template>
-  <div class="flex flex-col w-screen h-screen text-center items-center justify-center font-mono text-slate-300">
-    <h1 class="text-7xl font-bold pb-5"> {{Portfolios[pIndex].title}}</h1>
-    <div class="w-9/12 flex h-1/2 justify-between ">
-      <button @click="indexLeft" class="bg-slate-600 p-3 h-48">Prev</button>
-      <div class="flex flex-col px-10">
-        <div class="flex  items-center justify-center ">
-            <img class="w-[40rem]" :src='Portfolios[pIndex].img' alt=""/>
-            <div class="flex flex-col w-1/2 text-xl ml-5">
-                <p class="text-xl">  {{Portfolios[pIndex].description}} </p>
-                <hr/>
-                <br/>
-                <div class="flex flex-col items-center justify-around">
-                    <a :href="Portfolios[pIndex].repoLink" class="bg-red-400 p-2 mb-3 border-2 border-blue-300 text-black w-2/3"> Git Repo </a>
-                    <a :href="Portfolios[pIndex].deployLink" class="bg-green-400 p-2 border-2 border-blue-300 text-black  w-2/3"> Deployed Link </a>
-                </div>
+  <div class="flex flex-col w-screen h-[40rem] text-center items-center justify-center font-noto text-slate-300 bg-blue-300">
+    <h1 class="text-7xl font-bold pb-5 text-black"> {{Portfolios[pIndex].title}}</h1>
+    <div class="w-9/12 flex h-2/3 bg-blue-400 rounded">
+            <img class="w-1/2 rounded" :src='Portfolios[pIndex].img' alt=""/>
+            <div class="flex flex-col items-center justify-around w-1/2">
+              <p class="text-xl h-1/2 flex items-center justify-around p-4">  {{Portfolios[pIndex].description}} </p>
+              <div class ="h-1/2 w-full flex items-center justify-around">
+                <a :href="Portfolios[pIndex].repoLink" class="bg-red-400 rounded text-lg p-2 border-2 border-blue-300 text-black w-1/3"> Git Repo </a>
+                <a :href="Portfolios[pIndex].deployLink" class="bg-green-400 rounded text-lg p-2 border-2 border-blue-300 text-black w-1/3"> Deployed Link </a>
+              </div>
             </div>
-        </div>
-        </div>
-      <button class="bg-slate-600 p-3  h-48" @click="indexRight">Next</button>
+
+    </div>
+    <div class = "flex pt-3 w-1/3 justify-around">
+      <button @click="indexLeft" class="bg-slate-600 p-3 rounded-lg"> &lt;&lt; </button> 
+      <button class="bg-slate-600 p-3 rounded-lg" @click="indexRight"> >> </button> 
     </div>
   </div>
 </template>
@@ -76,7 +73,7 @@ export default {
           deployLink: "https://l1keafox.github.io/reactFolio/",
         },
         {
-          title: "My First Portoflio",
+          title: "Portfolio Mk.I",
           description:
             "Made in first two weeks of bootcamp made in Sept of 2022, using only HTML/CSS/JS with no frame work.",
           img: htmlFolio,
