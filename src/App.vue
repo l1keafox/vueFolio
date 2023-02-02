@@ -1,11 +1,12 @@
 <template>
   <div id="tiles" class=""></div>
-  <div id="content" class="text-3xl absolute overflow-hidden" v-if="introDone">
-    <div id="navMenu">
-      <NavMenu @navClick="scrollToRef" />
-    </div>
+  <div id="content" class="text-3xl absolute overflow-hidden" v-if="introDone" >
     <div  class="contentSection">
       <HomePage />
+    </div>
+
+    <!-- <div id="navMenu">
+      <NavMenu @navClick="scrollToRef" />
     </div>
     <div ref="AboutMe" class="contentSection">
       <AboutMe />
@@ -18,7 +19,7 @@
     </div>
     <div ref="ContactMe"  class="contentSection">
       <ContactMe />
-    </div>
+    </div> -->
   </div>
   <div
     id="welcome"
@@ -42,26 +43,26 @@
 <script>
 import anime from "animejs/lib/anime.es.js";
 import LandingPage from "./pages/LandingPage";
-import HomePage from "./pages/HomePage";
 import { TransitionRoot } from "@headlessui/vue";
-import NavMenu from "./components/NavMenu";
+// import NavMenu from "./components/NavMenu";
+import HomePage from "./pages/HomePage";
 
-import AboutMe from "./pages/AboutMe";
-import ContactMe from "./pages/ContactMe";
-import MyResume from "./pages/MyResume";
-import MyPortfolio from "./pages/MyPortfolio";
+// import AboutMe from "./pages/AboutMe";
+// import ContactMe from "./pages/ContactMe";
+// import MyResume from "./pages/MyResume";
+// import MyPortfolio from "./pages/MyPortfolio";
 
 export default {
   name: "App",
   components: {
-    HomePage,
     LandingPage,
     TransitionRoot,
-    MyResume,
-    MyPortfolio,
-    AboutMe,
-    ContactMe,
-    NavMenu,
+    HomePage,
+    // MyResume,
+    // MyPortfolio,
+    // AboutMe,
+    // ContactMe,
+    // NavMenu,
   },
   data() {
     return {
@@ -103,6 +104,34 @@ export default {
   },
   mounted() {
 
+
+    window.onmousemove = (e) => {
+      // get mouse posistion
+      if(this.introDone){
+      const gallery = document.getElementById("content");
+    //  console.log(gallery);
+      const mouseX = e.clientX,
+        mouseY = e.clientY;
+      // divid by height
+      const xDecimal = mouseX / window.innerWidth,
+        yDecimal = mouseY / window.innerHeight;
+      // multiply by gallery heigh
+      const panX = gallery.offsetWidth * xDecimal * -1 * 0.5,
+        panY = gallery.offsetHeight * yDecimal * -1 * 0.5;
+      // set up translate
+//      console.log(panX, panY);
+      gallery.animate(
+        {
+          transform: `translate(${panX}px,${panY}px)`,
+        },
+        {
+          duration: 4000,
+          fill: "forwards",
+          easing: "ease",
+        }
+      );
+      }
+    };
 
 
     let toggle = false;
