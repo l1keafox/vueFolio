@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col w-screen h-[40rem] text-center items-center justify-center font-noto text-slate-300 bg-blue-300">
+  <div class="flex flex-col w-screen h-[40rem] text-center items-center justify-center font-noto text-slate-300">
     <h1 class="text-7xl font-bold pb-5 text-black"> {{Portfolios[pIndex].title}}</h1>
     <div class="w-9/12 flex h-2/3 bg-blue-400 rounded">
             <img class="w-1/2 rounded" :src='Portfolios[pIndex].img' alt=""/>

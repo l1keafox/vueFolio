@@ -1,13 +1,14 @@
 <template>
   <div id="tiles" class=""></div>
+  <Background/>
   <div id="content" class="text-3xl absolute overflow-hidden" v-if="introDone">
-    <div id="navMenu">
+    <!-- <div id="navMenu">
       <NavMenu @navClick="scrollToRef" />
-    </div>
-    <div  class="contentSection flex text-center items-center justify-center">
+    </div>     -->
+    <div  class="contentSection flex text-center show">
       <HomePage />
     </div>
-    <div ref="AboutMe" class="contentSection flex text-center items-center justify-center">
+    <div ref="AboutMe" class="contentSection flex text-center items-center justify-center show">
       <AboutMe />
     </div >
     <div ref="MyPortfolio"  class="contentSection flex text-center items-center justify-center ">
@@ -18,7 +19,9 @@
     </div>
     <div ref="ContactMe"  class="contentSection">
       <ContactMe />
-    </div>
+    </div>     
+    <!-- 
+-->
   </div>
   <div
     id="welcome"
@@ -42,9 +45,10 @@
 <script>
 import anime from "animejs/lib/anime.es.js";
 import LandingPage from "./pages/LandingPage";
-import HomePage from "./pages/HomePage";
 import { TransitionRoot } from "@headlessui/vue";
-import NavMenu from "./components/NavMenu";
+import Background from "./components/Background.vue";
+import HomePage from "./pages/HomePage";
+// import NavMenu from "./components/NavMenu";
 
 import AboutMe from "./pages/AboutMe";
 import ContactMe from "./pages/ContactMe";
@@ -54,14 +58,15 @@ import MyPortfolio from "./pages/MyPortfolio";
 export default {
   name: "App",
   components: {
-    HomePage,
     LandingPage,
+    Background,
     TransitionRoot,
+    // NavMenu,
+    HomePage,
+    AboutMe,
     MyResume,
     MyPortfolio,
-    AboutMe,
     ContactMe,
-    NavMenu,
   },
   data() {
     return {
